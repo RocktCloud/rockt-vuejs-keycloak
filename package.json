@@ -1,0 +1,19 @@
+{
+  "name": "rockt-vuejs-keycloak",
+  "version": "0.0.1",
+  "description": "Vue.js with Keycloak authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "security",
+    "keycloak",
+    "vuejs"
+  ],
+  "author": "Henrique Sakata <henrique.sakata@rockt.com.br>",
+  "contributors": [
+    { "name": "Silas Silva", "email": "silas.silva@rockt.com.br" }
+  ],
+  "license": "Apache-2.0"
+}
