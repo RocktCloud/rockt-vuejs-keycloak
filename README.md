@@ -50,7 +50,7 @@ new Vue({
 
 ```
 
-Configure o ```vue-router``` para usar o ```rockt-vuejs-keycloak``` na verificação das rotas.
+Configure the ```vue-router``` for to use ```rockt-vuejs-keycloak``` on verification of the routes.
 ```
 import Vue from 'vue'
 import VueRouter from 'vue-router'
