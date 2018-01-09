@@ -1,6 +1,6 @@
 {
   "name": "rockt-vuejs-keycloak",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vue.js with Keycloak authentication",
   "main": "index.js",
   "scripts": {
