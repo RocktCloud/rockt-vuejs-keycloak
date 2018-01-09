@@ -1,5 +1,5 @@
 import Keycloak from 'keycloak-js'
-import store from '../'
+import store from 'src/store'
 
 let keycloakAuth = new Keycloak('/statics/keycloak.json')
 
