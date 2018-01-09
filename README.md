@@ -113,7 +113,7 @@ Put the plugin at VueJS startup
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import store from 'rockt-vuejs-keycloak'
+import store from './store'
 import App from './App'
 import router from './router'
 
@@ -133,9 +133,9 @@ Configure the ```vue-router``` for to use ```rockt-vuejs-keycloak``` on verifica
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import store from 'rockt-vuejs-keycloak'
+import store from './store'
 
-import security from 'rockt-vuejs-keycloak/security'
+import security from 'rockt-vuejs-keycloak'
 
 Vue.use(VueRouter)
 
