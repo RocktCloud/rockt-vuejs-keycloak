@@ -29,13 +29,91 @@ Put the frontend settings in ```/src/statics/keycloak.json``` file that will be 
 }
 ```
 
+Create a ```security``` module in the application store, using the following example.
+```javascript
+// types.js
+export const SECURITY_AUTH = 'SECURITY_AUTH'
+```
+
+```javascript
+// mutations.js
+import axios from 'axios'
+
+import * as types from './types'
+
+export default {
+  [types.SECURITY_AUTH] (state, keycloakAuth) {
+    state.auth = keycloakAuth
+    axios.defaults.headers.common = { 'Authorization': 'Bearer ' + keycloakAuth.token }
+  }
+}
+```
+
+```javascript
+// getters.js
+import * as types from './types'
+
+export default {
+  [types.SECURITY_AUTH]: state => {
+    return state.auth
+  }
+}
+```
+
+```javascript
+// actions.js
+import * as types from './types'
+
+import store from 'src/store'
+
+export default {
+  authLogin ({ commit }, keycloakAuth) {
+    store.commit('SECURITY_AUTH', keycloakAuth)
+  },
+  authLogout ({ commit }) {
+    commit(types.SECURITY_AUTH)
+  }
+}
+```
+
+```javascript
+// index.js
+import actions from './actions'
+import getters from './getters'
+import mutations from './mutations'
+
+const state = {
+  auth: {
+    authenticated: false
+  }
+}
+
+export default {
+  state,
+  actions,
+  getters,
+  mutations
+}
+```
+
+Don't forget to load it on the Vuex modules!
+```javascript
+import security from 'src/store/modules/security'
+
+export default new Vuex.Store({
+  modules: {
+    security
+  }
+})
+```
+
 Put the plugin at VueJS startup
 
 ```javascript
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import store from 'rockt-vuejs-keycloak'
+import store from './store'
 import App from './App'
 import router from './router'
 
@@ -55,9 +133,9 @@ Configure the ```vue-router``` for to use ```rockt-vuejs-keycloak``` on verifica
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import store from 'rockt-vuejs-keycloak'
+import store from './store'
 
-import security from 'rockt-vuejs-keycloak/security'
+import security from 'rockt-vuejs-keycloak'
 
 Vue.use(VueRouter)
 

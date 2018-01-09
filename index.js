@@ -1,12 +1,11 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import init from './init'
+import roles from './roles'
+import logout from './logout'
+import header from './header'
 
-import security from './modules/security'
-
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  modules: {
-    security
-  }
-})
+export default {
+  init,
+  roles,
+  logout,
+  header
+}
