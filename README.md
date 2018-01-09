@@ -17,7 +17,7 @@ Installation
 Setup
 -------------------------------------------------------------
 Put the frontend settings in ```/src/statics/keycloak.json``` file that will be used to authenticate to Keycloak.
-```
+```json
 {
   "realm": "SERVER-DEV",
   "auth-server-url": "https://keycloak.mydomain.com/auth",
@@ -31,7 +31,7 @@ Put the frontend settings in ```/src/statics/keycloak.json``` file that will be 
 
 Put the plugin at VueJS startup
 
-```
+```javascript
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
@@ -51,7 +51,7 @@ new Vue({
 ```
 
 Configure the ```vue-router``` for to use ```rockt-vuejs-keycloak``` on verification of the routes.
-```
+```javascript
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
