@@ -127,3 +127,9 @@ export default router
 Contributions
 -----------------------------------------------------------
 Any comments or suggestions are very welcome.
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2018-present, Rockt
