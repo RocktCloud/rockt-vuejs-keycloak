@@ -3,7 +3,10 @@ import store from '../'
 
 let keycloakAuth = new Keycloak('/statics/keycloak.json')
 
-export default (next, roles) => {
+export default (next, roles, conf) => {
+  if (conf) {
+    keycloakAuth = new Keycloak(conf);
+  }
   keycloakAuth.init({ onLoad: 'login-required' })
     .success((authenticated) => {
       if (!authenticated) {
